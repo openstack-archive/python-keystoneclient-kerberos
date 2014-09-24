@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
@@ -12,17 +10,20 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-"""
-test_keystoneclient_kerberos
-----------------------------------
-
-Tests for `keystoneclient_kerberos` module.
-"""
-
-from keystoneclient_kerberos.tests import base
+from keystoneclient.auth.identity import v3
+import requests_kerberos
 
 
-class TestKeystoneclient_kerberos(base.TestCase):
+class KerberosMethod(v3.AuthMethod):
 
-    def test_something(self):
-        pass
+    _method_parameters = []
+
+    def get_auth_data(self, session, auth, headers, request_kwargs={},
+                      **kwargs):
+        request_kwargs['requests_auth'] = requests_kerberos.HTTPKerberosAuth(
+            mutual_authentication=requests_kerberos.OPTIONAL)
+        return 'kerberos', {}
+
+
+class Kerberos(v3.AuthConstructor):
+    _auth_method_class = KerberosMethod
