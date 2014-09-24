@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
@@ -12,8 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import pbr.version
 
+class FixtureValidationError(Exception):
+    """The token you created is not legitimate.
 
-__version__ = pbr.version.VersionInfo(
-    'keystoneclient_kerberos').version_string()
+    The data contained in the token that was generated is not valid and would
+    not have been returned from a keystone server. You should not do testing
+    with this token.
+    """
