@@ -17,7 +17,7 @@ import pbr.version
 from keystoneclient_kerberos import v3
 
 __version__ = pbr.version.VersionInfo(
-    'keystoneclient_kerberos').version_string()
+    'python-keystoneclient-kerberos').version_string()
 
 V3Kerberos = v3.Kerberos
 
