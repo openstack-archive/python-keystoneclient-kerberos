@@ -30,6 +30,7 @@ class TestCase(base.BaseTestCase):
     """Test case base class for all unit tests."""
 
     TEST_ROOT_URL = utils.TEST_ROOT_URL
+    TEST_V3_URL = TEST_ROOT_URL + 'v3'
 
     def setUp(self):
         super(TestCase, self).setUp()
