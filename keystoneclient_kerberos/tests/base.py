@@ -29,6 +29,7 @@ class TestCase(base.BaseTestCase):
     """Test case base class for all unit tests."""
 
     TEST_ROOT_URL = 'http://keystoneserver.test.com:5000/'
+    TEST_V3_URL = TEST_ROOT_URL + 'v3'
 
     def setUp(self):
         super(TestCase, self).setUp()
