@@ -55,6 +55,7 @@ class KerberosMock(fixtures.Fixture):
     def mock_auth_success(self,
                           token_id=None,
                           token_body=None,
+                          method='POST',
                           url=TEST_ROOT_URL + 'v3/auth/tokens'):
         if not token_id:
             token_id = uuid.uuid4().hex
@@ -70,6 +71,8 @@ class KerberosMock(fixtures.Fixture):
                           'status_code': 200,
                           'json': token_body}]
 
-        self.requests_mock.post(url, response_list=response_list)
+        self.requests_mock.register_uri(method,
+                                        url,
+                                        response_list=response_list)
 
         return token_id, token_body
