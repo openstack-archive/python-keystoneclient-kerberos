@@ -16,8 +16,14 @@
 # under the License.
 
 from oslotest import base
+from requests_mock.contrib import fixture as requests_fixture
 
 
 class TestCase(base.BaseTestCase):
 
     """Test case base class for all unit tests."""
+
+    def setUp(self):
+        super(TestCase, self).setUp()
+
+        self.requests = self.useFixture(requests_fixture.Fixture())
