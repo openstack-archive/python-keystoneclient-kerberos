@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystoneclient import access
 from keystoneclient.auth.identity import v3
 import requests_kerberos
 
@@ -28,3 +29,16 @@ class KerberosMethod(v3.AuthMethod):
 
 class Kerberos(v3.AuthConstructor):
     _auth_method_class = KerberosMethod
+
+
+class FederatedKerberos(v3.FederatedBaseAuth):
+
+    def get_unscoped_auth_ref(self, session, **kwargs):
+        requests_auth = requests_kerberos.HTTPKerberosAuth(
+            mutual_authentication=requests_kerberos.OPTIONAL)
+
+        resp = session.get(self.federated_token_url,
+                           requests_auth=requests_auth,
+                           authenticated=False)
+
+        return access.AccessInfo.factory(body=resp.json(), resp=resp)

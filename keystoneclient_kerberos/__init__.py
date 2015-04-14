@@ -20,5 +20,7 @@ __version__ = pbr.version.VersionInfo(
     'python-keystoneclient-kerberos').version_string()
 
 V3Kerberos = v3.Kerberos
+V3FederatedKerberos = v3.FederatedKerberos
 
-__all__ = ['V3Kerberos']
+__all__ = ['V3FederatedKerberos',
+           'V3Kerberos']

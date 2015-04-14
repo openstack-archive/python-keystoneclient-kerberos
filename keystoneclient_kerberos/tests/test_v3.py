@@ -17,7 +17,6 @@ from keystoneclient import fixture as ks_fixture
 from keystoneclient import session
 import mock
 import requests_kerberos
-from requests_mock.contrib import fixture as requests_fixture
 
 from keystoneclient_kerberos.tests import base
 from keystoneclient_kerberos import v3
@@ -32,8 +31,6 @@ class TestKerberosAuth(base.TestCase):
 
         self.token_id = uuid.uuid4().hex
         self.token_body = ks_fixture.V3Token()
-
-        self.requests = self.useFixture(requests_fixture.Fixture())
 
     @mock.patch.object(requests_kerberos.HTTPKerberosAuth,
                        'generate_request_header')
