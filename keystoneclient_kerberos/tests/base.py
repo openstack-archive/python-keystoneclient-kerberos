@@ -16,8 +16,36 @@
 # under the License.
 
 from oslotest import base
+from requests_mock.contrib import fixture as requests_fixture
+
+from keystoneclient_kerberos.tests import utils
+
+
+REQUEST = {'auth': {'identity': {'methods': ['kerberos'],
+                                 'kerberos': {}}}}
 
 
 class TestCase(base.BaseTestCase):
 
     """Test case base class for all unit tests."""
+
+    TEST_ROOT_URL = utils.TEST_ROOT_URL
+
+    def setUp(self):
+        super(TestCase, self).setUp()
+
+        self.requests_mock = self.useFixture(requests_fixture.Fixture())
+
+        km = utils.KerberosMock(self.requests_mock)
+        self.kerberos_mock = self.useFixture(km)
+
+    def assertRequestBody(self, body=None):
+        """Ensure the request body is the standard kerberos auth request.
+
+        :param dict body: the body to compare. If not provided the last request
+                          body will be used.
+        """
+        if not body:
+            body = self.requests_mock.last_request.json()
+
+        self.assertEqual(REQUEST, body)
