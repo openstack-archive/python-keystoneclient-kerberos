@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 10 Jun 2015 06:27:58 +0000
+Reviewed-on: https://review.openstack.org/188496
+Project: openstack/python-keystoneclient-kerberos
+Branch: refs/heads/master
