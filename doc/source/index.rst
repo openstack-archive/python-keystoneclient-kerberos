@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to python-keystoneclient-kerberos's documentation!
-========================================================
+===========================================================
 
 Contents:
 
@@ -14,6 +14,7 @@ Contents:
    readme
    installation
    usage
+   drivers
    contributing
 
 Indices and tables
