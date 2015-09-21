@@ -4,4 +4,4 @@ source = keystoneclient_kerberos
 omit = keystoneclient_kerberos/tests/*,keystoneclient_kerberos/openstack/*
 
 [report]
-ignore-errors = True
+ignore_errors = True
