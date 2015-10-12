@@ -15,6 +15,14 @@ from keystoneclient.auth.identity import v3
 import requests_kerberos
 
 
+def _requests_auth():
+    # NOTE(jamielennox): request_kerberos.OPTIONAL allows the plugin to accept
+    # unencrypted error messages where we can't verify the origin of the error
+    # because we aren't authenticated.
+    return requests_kerberos.HTTPKerberosAuth(
+        mutual_authentication=requests_kerberos.OPTIONAL)
+
+
 class KerberosMethod(v3.AuthMethod):
 
     _method_parameters = []
@@ -22,7 +30,7 @@ class KerberosMethod(v3.AuthMethod):
     def get_auth_data(self, session, auth, headers, request_kwargs, **kwargs):
         # NOTE(jamielennox): request_kwargs is passed as a kwarg however it is
         # required and always present when called from keystoneclient.
-        request_kwargs['requests_auth'] = requests_kerberos.HTTPKerberosAuth()
+        request_kwargs['requests_auth'] = _requests_auth()
         return 'kerberos', {}
 
 
@@ -41,7 +49,7 @@ class FederatedKerberos(v3.FederatedBaseAuth):
 
     def get_unscoped_auth_ref(self, session, **kwargs):
         resp = session.get(self.federated_token_url,
-                           requests_auth=requests_kerberos.HTTPKerberosAuth(),
+                           requests_auth=_requests_auth(),
                            authenticated=False)
 
         return access.AccessInfo.factory(body=resp.json(), resp=resp)
