@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 16 Oct 2015 02:18:34 +0000
+Reviewed-on: https://review.openstack.org/233864
+Project: openstack/python-keystoneclient-kerberos
+Branch: refs/heads/master
