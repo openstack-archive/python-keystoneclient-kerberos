@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Boris Bobrov <bbobrov@mirantis.com>
+Code-Review+1: Sean Perry <sean.perry@hpe.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 27 Nov 2015 01:47:15 +0000
+Reviewed-on: https://review.openstack.org/249410
+Project: openstack/python-keystoneclient-kerberos
+Branch: refs/heads/master
