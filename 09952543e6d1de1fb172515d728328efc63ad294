@@ -1,0 +1,10 @@
+Code-Review+1: venkatamahesh <venkatamaheshkotha@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Lin Hua Cheng <os.lcheng@gmail.com>
+Workflow+1: Lin Hua Cheng <os.lcheng@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 18 Dec 2015 12:48:01 +0000
+Reviewed-on: https://review.openstack.org/257807
+Project: openstack/python-keystoneclient-kerberos
+Branch: refs/heads/master
