@@ -10,9 +10,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import debtcollector
 from keystoneclient import access
 from keystoneclient.auth.identity import v3
 import requests_kerberos
+
+
+removals.removed_module('keystoneclient_kerberos.v3',
+                        replacement='keystoneauth',
+                        version='0.3.0',
+                        removal_version='0.4.0')
 
 
 def _requests_auth():
