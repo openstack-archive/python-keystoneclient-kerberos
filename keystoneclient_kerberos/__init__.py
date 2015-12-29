@@ -12,9 +12,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import warnings
+
 import pbr.version
 
 from keystoneclient_kerberos import v3
+
+
+warnings.warn(
+    "The keystoneclient_kerberos package is deprecated in favor of "
+    "keystoneauth1 and will not be supported.", DeprecationWarning)
 
 __version__ = pbr.version.VersionInfo(
     'python-keystoneclient-kerberos').version_string()
