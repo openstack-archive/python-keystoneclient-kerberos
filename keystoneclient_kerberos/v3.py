@@ -10,8 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystoneclient import access
-from keystoneclient.auth.identity import v3
+from keystoneauth1 import access
+from keystoneauth1.identity import v3
 import requests_kerberos
 
 
@@ -38,7 +38,7 @@ class Kerberos(v3.AuthConstructor):
     _auth_method_class = KerberosMethod
 
 
-class FederatedKerberos(v3.FederatedBaseAuth):
+class FederatedKerberos(v3.FederationBaseAuth):
     """Authenticate using Kerberos via the keystone federation mechanisms.
 
     This is not technically federation. However, federation is the term which
@@ -52,4 +52,4 @@ class FederatedKerberos(v3.FederatedBaseAuth):
                            requests_auth=_requests_auth(),
                            authenticated=False)
 
-        return access.AccessInfo.factory(body=resp.json(), resp=resp)
+        return access.create(body=resp.json(), resp=resp)

@@ -12,8 +12,8 @@
 
 import uuid
 
-from keystoneclient import fixture as ks_fixture
-from keystoneclient import session
+from keystoneauth1 import fixture as ks_fixture
+from keystoneauth1 import session
 
 from keystoneclient_kerberos.tests import base
 from keystoneclient_kerberos import v3
