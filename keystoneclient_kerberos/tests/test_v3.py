@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystoneclient import session
+from keystoneauth1 import session
 
 from keystoneclient_kerberos.tests import base
 from keystoneclient_kerberos import v3
