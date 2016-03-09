@@ -13,7 +13,7 @@
 import uuid
 
 import fixtures
-from keystoneclient import fixture as ks_fixture
+from keystoneauth1 import fixture as ks_fixture
 from oslotest import mockpatch
 import requests_kerberos
 
