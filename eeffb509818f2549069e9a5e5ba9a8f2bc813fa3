@@ -1,0 +1,8 @@
+Code-Review+2: Steve Martinelli <s.martinelli@gmail.com>
+Workflow+1: Steve Martinelli <s.martinelli@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 21 Jun 2016 19:22:54 +0000
+Reviewed-on: https://review.openstack.org/331181
+Project: openstack/python-keystoneclient-kerberos
+Branch: refs/heads/master
