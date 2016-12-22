@@ -1,13 +1,12 @@
-===============================
-python-keystoneclient-kerberos
-===============================
+This project is no longer maintained.
 
-python-keystoneclient-kerberos was an authentication plugin for keystoneclient
-that supported Kerberos. The contents have been moved into the keystoneauth1
-package at https://pypi.python.org/pypi/keystoneauth1/ , and
-python-keystoneclient-kerberos will no longer be supported.
+The contents of this repository are still available in the Git
+source code management system.  To see the contents of this
+repository before it reached its end of life, please check out the
+previous commit with "git checkout HEAD^1".
 
-* Free software: Apache license
-* Documentation: http://docs.openstack.org/developer/python-keystoneclient-kerberos
-* Source: http://git.openstack.org/cgit/openstack/python-keystoneclient-kerberos
-* Bugs: http://bugs.launchpad.net/python-keystoneclient
+For an alternative project, please see openstack/keystoneauth1.
+
+For any further questions, please email
+openstack-dev@lists.openstack.org or join #openstack-dev on
+Freenode.
